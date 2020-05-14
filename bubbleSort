@@ -1,0 +1,24 @@
+function bubbleSort(arr) {
+
+  if (arr && arr.length > 0) {
+    let len = arr.length;
+    for (let i = 0; i < len; i++) {
+      let k = i;
+      let swapped = false;
+      for (j = k + 1; j < len; j++) {
+        if (arr[k] > arr[j]) {
+          let temp = arr[k];
+          arr[k] = arr[j];
+          arr[j] = temp;
+          swapped = true;
+        }
+      }
+      if (!swapped) {
+        break;
+      }
+    }
+  }
+  return arr;
+}
+let result = bubbleSort([13, 12, 11, 5, 6]);
+console.log(result);
