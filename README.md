@@ -1,2 +1,2 @@
 # Algorithms-in-Javascript
-Algos in Javascript
+Implementation of CS-Algorithms in Javascript
