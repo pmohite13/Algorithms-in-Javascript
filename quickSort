@@ -16,8 +16,7 @@ function partition(arr, start, end) {
     if (arr[i] <= pivot) {
       let temp = arr[i];
       arr[i] = arr[pIndex];
-      arr[pIndex] = temp;
-      //swap(arr[i], arr[pIndex]);
+      arr[pIndex] = temp;      
       pIndex++;
     }
   }
