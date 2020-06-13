@@ -1,0 +1,45 @@
+function mergeSort(arr) {
+ 
+  if (arr && arr.length < 2) {
+    return;
+  }
+  let mid = parseInt(arr.length / 2);
+  let left, right = [];
+  left = arr.slice(0, mid);
+  right = arr.slice(mid, arr.length);
+  mergeSort(left);
+  mergeSort(right);
+  mergeArray(left, right, arr);
+  return arr;
+}
+
+function mergeArray(L, R, A) {
+  let nL = L.length;
+  let nR = R.length;
+  let i = 0,
+    j = 0,
+    k = 0;
+  while (i < nL && j < nR) {
+    if (L[i] < R[j]) {
+      A[k] = L[i];
+      i++;
+    } else {
+      A[k] = R[j];
+      j++;
+    }
+    k++;
+  }
+  while (i < nL) {
+    A[k] = L[i];
+    i++;
+    k++;
+  }
+  while (j < nR) {
+    A[k] = R[j];
+    j++;
+    k++;
+  }
+}
+
+let arr = [13, 12, 11, 5, 6];
+console.log(mergeSort(arr));
