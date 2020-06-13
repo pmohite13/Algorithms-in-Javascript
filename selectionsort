@@ -1,0 +1,23 @@
+function selectionSort(arr) {
+  if (arr && arr.length > 0) {
+    let len = arr.length;
+    for (let i = 0; i < len; i++) {
+      let min = arr[i];
+      let swapPos = -1;
+      for (let j = i + 1; j < len; j++) {
+        if (arr[j] < min) {
+          min = arr[j];
+          swapPos = j;
+        }
+      }
+      if (swapPos > 0) {
+        let temp = arr[i];
+        arr[i] = min;
+        arr[swapPos] = temp;
+      }
+    }
+  }
+  return arr;
+}
+
+console.log(selectionSort([13, 12, 11, 5, 6]));
